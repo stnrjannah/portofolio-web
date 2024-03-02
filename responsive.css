@@ -1,0 +1,33 @@
+@media screen and (max-width: 1000px){
+    p {
+        font-size: .9rem;
+        line-height: 1.8rem;
+    }
+
+    .grid-3 {
+        gap: 1rem;
+    }
+
+    .skills-right ul li {
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 1150px){
+    nav li{
+        font-size: 0.9rem;
+    }
+    nav .btn {
+        font-size: 0.9rem;
+    }
+}
+@media screen and (max-width: 1038px){
+    .hideOnMobile {
+        display: none;
+        transition: .1s ease-out;
+    }
+
+    .menu-button {
+        display: block;
+        transition: .1s ease-out;
+    }
+}
