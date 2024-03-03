@@ -441,9 +441,564 @@ nav .btn {
 }
 
 .skills-right {
-    line-height: 2rem;
+    line-height: 3rem;
     padding: 0 1rem;
     letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    padding: var(--sectionPadding);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.contact-form div {
+    margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem 1.3rem;
+    font-family: "Protest Riot", sans-serif;
+    background: var(--secondaryBackgroundColor);
+    border: 1px solid var(--borderColor);
+    border-radius: 3px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #9d9fa1;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 1px solid #7d7d7d;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.75rem 1.3rem;
+    background-color: var(--primaryIconColor);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-family: 'Protest Riot', sans-serif;
+    letter-spacing: 2px;
+}
+
+.btn-submit:hover {
+    background: var(--primaryIconColorHover);
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-item-icon {
+    background: var(--thirdBackgroundColor);
+    width: 53px;
+    height: 53px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-item-icon svg {
+    fill: var(--primaryIconColor);
+}
+
+.contact-item-detail h4{
+    margin-bottom: 0.6rem;
+}
+
+/* Footer Section */
+footer {
+    padding: 4rem 0;
+    background: var(--secondaryBackgroundColor);
+    text-align: center;
+}
+
+.footer-icons {
+    margin-bottom: 3rem;
+}
+
+.footer-icons a {
+    margin: 0 .5rem;
+}
+
+.footer-icons svg {
+    fill: #3e3f40;
+}
+
+.footer-icons a:hover svg {
+    fill: #000;
+}
+
+@media screen and (max-width: 496px) {
+    .hero-right{
+        margin-top: 0;
+    }
+}@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+:root {
+    --primaryTextColor: #232e35; /*Untuk title atau judul*/
+    --secondaryTextColor: #656d72; /*Untuk text biasa seperti paragraph contohnya*/
+    --borderColor: #f1f1f1;
+    --lineColor: #d9d9d9; /* Untuk Line di pre-title*/
+
+    --primaryBackgroundColor:#fff;
+    --secondaryBackgroundColor: #fbfbfb;
+    --thirdBackgroundColor: #f5f3fe;
+
+    --primaryIconColor: #7e74f1;
+    --primaryIconColorHover: #5d51e8;
+
+    --sectionPadding: 6rem 0;
+    --itemBorderRadius:0.7rem;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Protest Riot", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--primaryTextColor);
+}
+
+p{
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+p, span, label, input, textarea, li {
+    color: var(--secondaryTextColor);
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px){
+    .main-container {
+        width: 90%;
+    }
+}
+
+/* Button */
+.btn{
+    font-family: "Protest Riot", sans-serif;
+    padding: 1rem 1.5rem ;
+    background: rgb(255, 255, 255);
+    border-radius: 25%;
+    border: 1.5px solid var(--borderColor);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.btn:hover {
+    box-shadow: rgba(0,0,0,0.04) 0px 3px 5px;
+}
+
+/* Titles */
+
+.section-title {
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.pre-title {
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: var(--secondaryTextColor);
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400px;
+    font-size: 0.9rem;
+}
+
+.pre-title::before{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--lineColor);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+}
+
+/* Layout */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+/* Logo and Navigation Menu */
+nav {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 18px;
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--primaryTextColor);
+}
+
+nav a:hover {
+    background-color: var(--secondaryBackgroundColor);
+}
+
+nav li:first-child {
+    margin-right: auto;
+}
+
+nav .btn {
+    background-color: var(--primaryIconColor); 
+    border: none; 
+    color: var(--borderColor); 
+    padding: 6px 17px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    border-radius: 10px; 
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+.experience button:hover {
+    background-color: var(--primaryIconColorHover);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: var(--primaryBackgroundColor);
+    backdrop-filter: blur(50px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.sidebar li {
+    width: 100%;
+}
+.sidebar a {
+    width: 100%;
+}
+
+.menu-button {
+    display: none;
+}
+
+/* Hero Section */
+#hero {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-name {
+    font-size: 3rem;
+    font-weight: 600px;
+    margin: 1rem 0 1rem;
+}
+
+.hero-name span {
+    color: var(--primaryIconColor);
+}
+
+.hero-right img {
+    margin-left: 20%;
+    width: 45%;
+    border-radius: 20%;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+}
+
+/* Service Section */
+#services {
+    background-color: var(--secondaryBackgroundColor);
+    padding: var(--sectionPadding);
+}
+
+.services .pre-title {
+    margin: 0 auto;
+}
+
+.services-title {
+    text-align: center;
+}
+
+.service {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--primaryBackgroundColor);
+    border-radius: var(--itemBorderRadius);
+}
+
+.service h4 {
+    margin: 1.5rem;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.service-icon {
+    background: var(--thirdBackgroundColor);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.3rem;
+    border-radius: 0.5rem;
+}
+
+.service-icon img {
+    fill: var(--primaryIconColor);
+}
+
+/* Experience Section */
+#experience {
+    background-color: var(--secondaryBackgroundColor);
+    padding: var(--sectionPadding);
+}
+
+.experience .pre-title {
+    margin: 0 auto;
+}
+
+.experience-title {
+    text-align: center;
+}
+
+.experience {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--primaryBackgroundColor);
+    border-radius: var(--itemBorderRadius);
+}
+
+.experience h4 {
+    margin: 1.5rem;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.experience-icon {
+    background: var(--thirdBackgroundColor);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.3rem;
+    border-radius: 0.5rem;
+}
+
+.experience-icon img {
+    fill: var(--primaryIconColor);
+}
+
+.experience ul li {
+    list-style: none;
+}
+.experience .btn {
+    background-color: var(--primaryIconColor); 
+    border: none; 
+    color: white; 
+    padding: 10px 20px;
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 12px; 
+    border-radius: 10px; 
+    cursor: pointer;
+    letter-spacing: 1px;
+  }
+.experience button:hover {
+    background-color: var(--primaryIconColorHover);
+}
+/* Skill image */
+.skill {
+    padding: 3rem 2rem;
+    text-align: center;
+    background: var(--primaryBackgroundColor);
+    border-radius: var(--itemBorderRadius);
+    font-size: 20px;
+}
+
+.skill-icon img {
+    fill: var(--primaryIconColor);
+}
+
+/* Portofolio Section */
+#portofolios {
+    padding: var(--sectionPadding);
+}
+
+.portofolio {
+    border-radius: var(--itemBorderRadius);
+    overflow: hidden;
+    border: 1px solid var(--borderColor);
+}
+
+.portofolio-cover {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.portofolio-cover img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.portofolio-info {
+    padding: 2rem 1.5rem;
+}
+
+.portofolio-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;   
+    margin-top: 10%;
+}
+
+.portofolio h4 {
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.portofolio-title a img:hover {
+    fill: var(--primaryIconColor);
+}
+
+.portofolio-title a img {
+    transition: .2s ease-in-out;
+}
+
+.portofolio-tags {
+    display: flex;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.portofolio-tags div {
+    font-size: .9rem;
+    border: 1px solid var(--secondaryTextColor);
+    padding: .4rem 1rem;
+    color: var(--secondaryTextColor);
+}
+
+/* Skiils & Education */
+#skills{
+    padding: var(--sectionPadding);
+    background-color: var(--secondaryBackgroundColor);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.education {
+    display: flex;
+    gap: 2rem;
+}
+
+.education .line {
+    padding: 0 .7rem;
+}
+
+.education .line div {
+    width: 2px;
+    height: 100%;
+    background: var(--borderColor);
+    position: relative;
+}
+
+.education-info {
+    line-height: 2rem;
+}
+.education-years {
+    margin-bottom: 3rem;
+    color: var(--primaryIconColorHover);
+}
+
+/* The dot on the Line */
+.education .line div::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: var(--borderColor);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+}
+
+.skills-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.5rem;
+}
+
+.skills-right {
+    line-height: 3rem;
+    padding: 0 1rem;
+    letter-spacing: 1px;
+    text-align: center;
 }
 
 /* Contact Section */
