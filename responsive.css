@@ -30,6 +30,10 @@
         display: block;
         transition: .1s ease-out;
     }
+    .contact-left {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
 }
 @media screen and (max-width: 600px) {
     .hero-right img {
@@ -41,5 +45,9 @@
         font-size: 2rem;
         font-weight: 600px;
         margin: 1rem 0 1rem;
+    }
+    .contact-left {
+        margin-left: 25px;
+        margin-right: 25px;
     }
 }
